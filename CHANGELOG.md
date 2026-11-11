@@ -1,33 +1,48 @@
 # Changelog
 
-Bu proje sürümlemeyi Semantic Versioning (`MAJOR.MINOR.PATCH`) ilkeleriyle yürütmeyi hedefler.
+Sürüm politikası: Semantic Versioning (`MAJOR.MINOR.PATCH`). Test edilmemiş işlevler kararlı sürüm olarak duyurulmaz.
+
+## [0.2.0] - 2026-11-12
+
+### Added
+- Kategoriler: Favoriler, Son Açılanlar, Film & Dizi, Müzik, Oyun, Araçlar, Diğer, Tümü
+- Uygulamaları kategoriler arasında taşıma (uzun OK → Kategori değiştir)
+- Aynı kategoride sola/sağa sıralama
+- Favorileri yönetme ve kart üzerinde yıldız göstergesi
+- Beko Home'dan açılan son 8 uygulamanın yerel geçmişi
+- Kategori, favori ve sıralama için `SharedPreferences` kalıcı depolama
+- Kumandasında uzun OK olmayanlar için görünür **Düzenle** butonu ve MENU tuşu desteği
+- Sürüm için ayrıntılı TV test rehberi
+
+### Changed
+- Büyük karşılama kutusunun yerini minimal, kompakt bir ana ekran aldı
+- Daha hafif kart geçiş animasyonları ve odak vurgusu
+- App metadata ve yerel düzen mantığı ayrı Java sınıflarına taşındı
+- `versionCode=3`, `versionName=0.2.0`
+
+### Testing
+- v0.2.0 fiziksel cihaz testi **bekliyor**
+- v0.1.1 üzerinde uygulama listesi, kumanda sağ/sol, OK ile uygulama başlatma, Geri/Home testleri başarılı
 
 ## [0.1.1] - 2026-11-12
 
 ### Fixed
 - 1080p Google TV arayüzünde alt tarafta kesilen uygulama kartları için kompakt dikey yerleşim
-- Uygulama adları tek satır yerine en fazla iki satırda gösterilir
-- Kumanda odağındaki kartın kenarlarda kesilmemesi için yatay satır boşlukları
-- Küçük ve büyük yüksekliklerde farklı ekran ölçüleri (`values/` ve `values-h650dp/`)
+- Uygulama adları iki satıra kadar gösterilir
+- Kumanda odağındaki kart için yatay boşluk
+- Farklı ekran yüksekliği için boyut kaynakları
 
-### Changed
-- Uygulama `versionCode=2`, `versionName=0.1.1`
-- Kartlar, başlık ve karşılama alanı küçük ekranlarda daha az yer kaplar
-- İlk sürümde çalışan sağ/sol, OK, Geri ve Home davranışları değiştirilmedi
-
-### Test durumu
-- Kullanıcı, Beko Google UHD TV (Android TV OS 14) üzerinde **v0.1.0** için sağ/sol, OK, Geri/Home testlerini başarılı bildirdi.
-- **v0.1.1 henüz TV üzerinde test edilmedi.** Bu sürümde ekranın altındaki uygulama adları ve yönlendirme metninin tam göründüğü kontrol edilmeli.
+### Testing
+- Beko Google UHD TV üzerinde uygulama ve kumanda testleri başarılı
+- 29 uygulama listelendi, YouTube uygulaması açıldı
 
 ## [0.1.0] - 2026-11-11
 
 ### Added
-- Android TV / Google TV için ilk ana ekran prototipi
-- Kumanda ile gezinme ve uygulama başlatma
-- Türkçe saat / tarih ve koyu tema
-- Android Studio Gradle projesi, güvenli Gradle Wrapper edinme betikleri
-- Türkçe ve İngilizce README
-- GitHub Actions debug APK derleme iş akışı
+- Android TV / Google TV için ilk prototip
+- Kumanda ile gezinme ve uygulama açma
+- Türkçe saat/tarih ve koyu tema
+- Android Studio projesi, Türkçe/İngilizce rehber, GitHub Actions
 
 ### Notes
-- İlk sürüm alpha niteliğindeydi; sistem launcher'ını değiştirmez.
+- Google TV sistem launcher'ını değiştirmez

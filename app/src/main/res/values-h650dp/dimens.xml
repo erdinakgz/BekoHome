@@ -1,26 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Expanded spacing for TV configurations at 650dp height or taller -->
+<!-- More whitespace on unusually tall Android TV layouts. -->
 <resources>
     <dimen name="page_horizontal_padding">54dp</dimen>
-    <dimen name="page_top_padding">38dp</dimen>
+    <dimen name="page_top_padding">36dp</dimen>
     <dimen name="page_bottom_padding">26dp</dimen>
-    <dimen name="clock_text_size">36sp</dimen>
-    <dimen name="hero_height">206dp</dimen>
-    <dimen name="hero_top_margin">28dp</dimen>
-    <dimen name="hero_padding">34dp</dimen>
-    <dimen name="hero_kicker_size">14sp</dimen>
-    <dimen name="hero_title_top_margin">9dp</dimen>
-    <dimen name="hero_title_size">31sp</dimen>
-    <dimen name="hero_subtitle_top_margin">10dp</dimen>
-    <dimen name="hero_subtitle_size">17sp</dimen>
-    <dimen name="section_top_margin">30dp</dimen>
-    <dimen name="section_title_size">23sp</dimen>
-    <dimen name="apps_row_top_margin">20dp</dimen>
-    <dimen name="apps_row_vertical_padding">12dp</dimen>
-    <dimen name="footer_top_margin">15dp</dimen>
-    <dimen name="app_tile_width">168dp</dimen>
-    <dimen name="app_tile_height">142dp</dimen>
+    <dimen name="welcome_top_margin">27dp</dimen>
+    <dimen name="welcome_text_size">32sp</dimen>
+    <dimen name="category_title_top_margin">26dp</dimen>
+    <dimen name="section_top_margin">25dp</dimen>
+    <dimen name="app_tile_width">169dp</dimen>
+    <dimen name="app_tile_height">143dp</dimen>
     <dimen name="app_tile_gap">17dp</dimen>
-    <dimen name="app_icon_size">58dp</dimen>
-    <dimen name="app_label_margin_top">14dp</dimen>
+    <dimen name="app_icon_size">57dp</dimen>
 </resources>

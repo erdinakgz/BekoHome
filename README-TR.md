@@ -1,97 +1,102 @@
-# BekoHome v0.1.1 — Android TV / Google TV
+# BekoHome v0.2.0 — Android TV / Google TV
 
-Beko Google UHD TV için hafif, kumanda ile kullanılabilen **test amaçlı ana ekran uygulaması**.
+Beko Google UHD TV için geliştirdiğimiz **hafif, reklamsız, özelleştirilebilir ana ekran uygulaması**.
 
-**Durum:** Alpha. v0.1.0 fiziksel Beko TV üzerinde açıldı; sağ/sol, OK ve Geri/Home testleri başarılı. **v0.1.1 henüz fiziksel TV üzerinde test edilmedi.**
-Bu proje Beko veya Google'ın resmî ürünü değildir.
+> **Sürüm durumu:** Test sürümü. Önceki v0.1.1 Beko TV üzerinde akıcı çalıştı; sağ/sol, OK ve Geri/Home testleri başarılı. **v0.2.0 henüz gerçek TV üzerinde doğrulanmadı.**
+>
+> Bu, Beko veya Google'ın resmî uygulaması değildir.
 
-## Doğrulanmış hedef cihaz
-- Android TV OS 14, API 34
-- ARM 32-bit (`armeabi-v7a`); uygulamada native kütüphane yok
-- Yaklaşık 1,74 GiB toplam RAM
-- 4K panel, 1080p arayüz çözünürlüğü
-- TV'nin IP adresi ve ADB portu değişebilir
+## Yeni tasarım ve özellikler
 
-## Özellikler
-- Kumanda yön tuşları / OK ile uygulamaları seçme
-- Yüklü TV uygulamalarını listeleme, simgelerini gösterme ve çalıştırma
-- Canlı Türkçe saat/tarih
-- Koyu, minimal arayüz
-- v0.1.1: Küçük TV ekranlarında kompakt yerleşim, iki satıra kadar uygulama adları
-- Reklam kütüphanesi, takip kodu ve internet izni içermez
-- Orijinal Google TV HOME uygulamasını kaldırmaz veya devre dışı bırakmaz
+- Daha sade koyu arayüz; büyük karşılama kutusu kaldırıldı
+- Kategoriler: **Favoriler · Son Açılanlar · Film & Dizi · Müzik · Oyun · Araçlar · Diğer · Tümü**
+- Her uygulamayı istediğin kategoriye taşıyabilirsin
+- Uygulamaları bulunduğu kategoride **sola/sağa kaydırarak sıralayabilirsin**
+- Favori uygulamalar köşedeki yıldızla işaretlenir
+- Son Açılanlar, sadece Beko Home içinden açtığın uygulamaları gösterir
+- Favoriler, kategoriler ve uygulama sıraları **televizyonda yerel olarak kaydedilir**
+- İnternet, reklam ve takip izni yok
+- Orijinal Google TV ana ekranını kaldırmaz
 
-## Windows'a kurulum
+## Kumandayla kullanım
 
-1. [Android Studio](https://developer.android.com/studio) yükleyin.
-2. GitHub'da **Code → Download ZIP** ile kaynak kodunu indirin veya Git ile klonlayın:
+1. **Sağ/sol:** Uygulamalar ve kategoriler arasında gezin.
+2. **OK:** Seçili uygulamayı aç.
+3. **Uygulama kartında OK'ye basılı tut:** Uygulama düzenleme menüsünü aç.
+4. **Alternatif:** Bir uygulamayı seç, üstteki **✎ Düzenle** butonuna git ve OK bas.
+5. **Kategori değiştir:** Film & Dizi / Müzik / Oyun / Araçlar / Diğer arasından seç. Uygulama otomatik olarak hedef kategoride gösterilir.
+6. **Favorilere ekle/çıkar:** Düzenleme menüsünden seç.
+7. **Sola taşı / Sağa taşı:** Aynı kategori içindeki sırayı değiştir.
+8. **Geri / Home:** Normal Google TV arayüzüne dön.
 
-   ```powershell
-   git clone https://github.com/erdinakgz/BekoHome.git
-   cd BekoHome
-   ```
+Yeni uygulamalar otomatik önerilen kategorilere yerleşir; dilediğinde kategoriyi değiştirebilirsin. `Tümü` bölümünde her uygulama görünür.
 
-3. Gradle 8.9 Wrapper JAR'ını **SHA-256 doğrulamasıyla** indirin:
+## Hedef TV
 
-   ```powershell
-   powershell -ExecutionPolicy Bypass -File .\SETUP-WINDOWS.ps1
-   ```
+- Beko Google UHD TV
+- Android TV OS 14 · API 34
+- ARM `armeabi-v7a`
+- Yaklaşık 1,74 GiB RAM
+- 4K panel / 1080p arayüz
 
-4. Proje klasörünü Android Studio'da açın. JDK 17 ve Android SDK 34 seçili olmalı.
-5. **Build → Build APK(s)** ile derleyin veya:
+## GitHub Actions ile APK
 
-   ```powershell
-   .\gradlew.bat assembleDebug
-   ```
+1. <https://github.com/erdinakgz/BekoHome/actions> sayfasını aç.
+2. **Android debug build** iş akışına gir.
+3. En güncel, **yeşil onaylı** çalışmayı seç.
+4. En alttaki **Artifacts → BekoHome-debug-apk** dosyasını indir.
+5. ZIP'in içindeki **app-debug.apk** dosyasını çıkar.
 
-6. Üretilen APK: `app\build\outputs\apk\debug\app-debug.apk`
+GitHub'daki kaynak kodu indirmek için: **Code → Download ZIP**. Bu ZIP, Android Studio projesidir; APK değildir.
 
-## TV bağlantısı / APK kurulumu
+## ADB ile test yüklemesi (Windows)
 
-TV'de **Geliştirici seçenekleri → Kablosuz hata ayıklama** etkin olmalı.
-Bilgisayar TV ile aynı yerel ağda olmalı. Gerekirse TV'de gösterilen eşleştirme
-kodu ile `adb pair IP:ESLESTIRME_PORTU` komutunu kullanın.
+Önce TV'de **Geliştirici seçenekleri → Kablosuz hata ayıklama** açık olmalı. Windows bilgisayar aynı yerel ağda olmalı.
 
 ```powershell
 cd C:\platform-tools
 .\adb.exe devices -l
-# Bağlı değilse, TV'nin kablosuz hata ayıklama ana ekranındaki güncel IP ve bağlantı portu:
-.\adb.exe connect TV_IP:ADB_BAGLANTI_PORTU
-.\adb.exe devices -l
-.\adb.exe install -r "C:\KAYNAK\BekoHome\app\build\outputs\apk\debug\app-debug.apk"
+```
+
+`device` görünüyorsa, indirilen APK'yı örneğin `C:\BekoHome-Test\app-debug.apk` yoluna koyup:
+
+```powershell
+.\adb.exe install -r "C:\BekoHome-Test\app-debug.apk"
 .\adb.exe shell am start -n com.erdinc.bekohome/.MainActivity
 ```
 
-`adb devices` sonucunda TV `device` durumunda olmalı. Eşleştirme portu ile
-bağlantı portu farklıdır. ADB kodlarını herkese açık paylaşmayın.
+**INSTALL_FAILED_UPDATE_INCOMPATIBLE** görürsen yeni APK'nın imzası mevcut APK'yla farklıdır. Sadece BekoHome'u kaldırıp tekrar yükle:
 
-**Güncelleme:** Aynı Windows bilgisayarında üretilen debug APK, önceki sürümün
-üzerine `install -r` ile yüklenebilir. APK farklı bir imzayla (örneğin GitHub
-Actions üzerinde) oluşturulduysa `INSTALL_FAILED_UPDATE_INCOMPATIBLE` hatası
-oluşabilir. Bu durumda yalnızca kendi BekoHome uygulamanızı
-`adb uninstall com.erdinc.bekohome` ile kaldırıp yeni APK’yı kurun; bu işlem
-uygulamanın kendi verilerini siler, Google TV sistemini etkilemez.
+```powershell
+.\adb.exe uninstall com.erdinc.bekohome
+.\adb.exe install "C:\BekoHome-Test\app-debug.apk"
+```
 
-## TV'de kullanım / geri alma
-- Sağ/sol ile uygulama seç, OK ile aç, Geri ile çık.
-- HOME tuşu mevcut Google TV ana ekranını açmaya devam eder.
-- Uygulamayı kaldırmak için:
+**Uyarı:** Kaldırma işlemi BekoHome'da kayıtlı kategori, favori ve sıralama verilerini siler; Google TV'nin kendi uygulamalarını etkilemez. Aynı imzalı APK'larda `install -r` bu verileri korur.
 
-  ```powershell
-  .\adb.exe uninstall com.erdinc.bekohome
-  ```
+## Lokal Android Studio derlemesi
 
-## Android derlemesi GitHub üzerinden
-**Actions → Android debug build** iş akışının başarılı çalışması durumunda
-**Artifacts** bölümünden `BekoHome-debug-apk` dosyasını indirebilirsiniz.
+```powershell
+git clone https://github.com/erdinakgz/BekoHome.git
+cd BekoHome
+powershell -ExecutionPolicy Bypass -File .\SETUP-WINDOWS.ps1
+.\gradlew.bat assembleDebug
+```
 
-## v0.1.1 test kontrol listesi
-- Uygulama kartları, uygulama adları ve en alttaki kontrol yazısı tam görünüyor mu?
-- Kumandada sağ/sol ve OK çalışıyor mu?
-- Geri/Home ile normal Google TV ekranına dönülebiliyor mu?
+Çıktı: `app\build\outputs\apk\debug\app-debug.apk`
 
-## Bilinmesi gerekenler
-- v0.1.1 APK henüz fiziksel cihazda doğrulanmış değildir.
-- Bazı üretici uygulamaları Android paket görünürlüğü kısıtlamaları nedeniyle listede görünmeyebilir.
-- HDMI kaynağına doğrudan geçiş bu ilk sürümde yoktur.
-- Lisans henüz seçilmedi; resmî bir açık kaynak lisansı eklenmeden yeniden kullanım izni verilmiş sayılmaz.
+## v0.2.0 TV testleri
+
+Ayrıntılı kontrol listesi: [docs/TEST-PLAN-v0.2.0.md](docs/TEST-PLAN-v0.2.0.md)
+
+- Kategoriler arasında kumandayla geçebiliyor musun?
+- Uzun OK ile düzenleme menüsü açılıyor mu?
+- Netflix'i örneğin Film & Dizi'den başka bir kategoriye taşıyabiliyor musun?
+- Uygulamayı sola/sağa kaydırdıktan sonra sırası korunuyor mu?
+- Bir uygulama favori yapıldığında yıldız simgesi çıkıyor mu?
+- Uygulamadan geri dönünce ve TV yeniden açılınca ayarlar korunuyor mu?
+- Home tuşuyla normal Google TV'ye dönülebiliyor mu?
+
+## Lisans
+
+Depo herkese açıktır; ancak yeniden kullanım izni veren bir lisans henüz eklenmedi. Katkılara açmadan önce MIT veya Apache-2.0 gibi bir lisans belirlemeliyiz.

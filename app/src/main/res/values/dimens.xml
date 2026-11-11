@@ -1,26 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Compact by default: appropriate for 1080p Android TV UI at ~540dp height -->
+<!-- Layout tuned for Android TV 1080p UI (~540dp logical height). -->
 <resources>
-    <dimen name="page_horizontal_padding">42dp</dimen>
-    <dimen name="page_top_padding">20dp</dimen>
-    <dimen name="page_bottom_padding">14dp</dimen>
-    <dimen name="clock_text_size">31sp</dimen>
-    <dimen name="hero_height">140dp</dimen>
-    <dimen name="hero_top_margin">16dp</dimen>
-    <dimen name="hero_padding">22dp</dimen>
-    <dimen name="hero_kicker_size">13sp</dimen>
-    <dimen name="hero_title_top_margin">7dp</dimen>
-    <dimen name="hero_title_size">27sp</dimen>
-    <dimen name="hero_subtitle_top_margin">7dp</dimen>
-    <dimen name="hero_subtitle_size">15sp</dimen>
-    <dimen name="section_top_margin">20dp</dimen>
-    <dimen name="section_title_size">21sp</dimen>
-    <dimen name="apps_row_top_margin">12dp</dimen>
-    <dimen name="apps_row_vertical_padding">8dp</dimen>
-    <dimen name="footer_top_margin">10dp</dimen>
-    <dimen name="app_tile_width">150dp</dimen>
-    <dimen name="app_tile_height">116dp</dimen>
-    <dimen name="app_tile_gap">14dp</dimen>
+    <dimen name="page_horizontal_padding">40dp</dimen>
+    <dimen name="page_top_padding">21dp</dimen>
+    <dimen name="page_bottom_padding">15dp</dimen>
+    <dimen name="welcome_top_margin">18dp</dimen>
+    <dimen name="welcome_text_size">27sp</dimen>
+    <dimen name="category_title_top_margin">18dp</dimen>
+    <dimen name="section_top_margin">18dp</dimen>
+    <dimen name="app_tile_width">154dp</dimen>
+    <dimen name="app_tile_height">127dp</dimen>
+    <dimen name="app_tile_gap">12dp</dimen>
     <dimen name="app_icon_size">46dp</dimen>
-    <dimen name="app_label_margin_top">9dp</dimen>
 </resources>

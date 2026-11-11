@@ -2,10 +2,11 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/home_background"
     android:fillViewport="true"
     android:clipToPadding="false"
-    android:scrollbars="none">
+    android:scrollbars="none"
+    android:background="@drawable/home_background">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,158 +15,231 @@
         android:paddingTop="@dimen/page_top_padding"
         android:paddingBottom="@dimen/page_bottom_padding"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BEKO"
+                        android:textColor="#FFFFFF"
+                        android:textSize="19sp"
+                        android:letterSpacing="0.18"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="11dp"
+                        android:text="HOME"
+                        android:textColor="#87C5FF"
+                        android:textSize="19sp"
+                        android:letterSpacing="0.18"
+                        android:textStyle="bold"/>
+                </LinearLayout>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="BEKO  /  HOME"
-                    android:textColor="#9AD1FF"
-                    android:textSize="19sp"
-                    android:letterSpacing="0.16"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Senin ekranın, senin düzenin."
-                    android:textColor="#B1BCC9"
-                    android:textSize="15sp"/>
+                    android:layout_marginTop="4dp"
+                    android:text="Senin ekranın. Senin düzenin."
+                    android:textSize="13sp"
+                    android:textColor="#8499AF"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="end">
+                android:gravity="end"
+                android:orientation="vertical">
                 <TextView
                     android:id="@+id/clockText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="21:05"
+                    android:text="12:00"
                     android:textColor="#FFFFFF"
-                    android:textSize="@dimen/clock_text_size"
+                    android:textSize="30sp"
                     android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/dateText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="-4dp"
-                    android:text="11 Kasım 2026"
-                    android:textColor="#BBC9D8"
-                    android:textSize="13sp"/>
+                    android:text="12 Kasım 2026"
+                    android:textColor="#94A9C0"
+                    android:textSize="12sp"/>
             </LinearLayout>
         </LinearLayout>
-        <FrameLayout
+
+        <View
             android:layout_width="match_parent"
-            android:layout_height="@dimen/hero_height"
-            android:layout_marginTop="@dimen/hero_top_margin"
-            android:background="@drawable/hero_background"
-            android:padding="@dimen/hero_padding">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="HOŞ GELDİN"
-                    android:letterSpacing="0.24"
-                    android:textColor="#89CFFF"
-                    android:textSize="@dimen/hero_kicker_size"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/hero_title_top_margin"
-                    android:text="İzlemek istediğin her şey."
-                    android:textColor="#FFFFFF"
-                    android:textSize="@dimen/hero_title_size"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/hero_subtitle_top_margin"
-                    android:text="Reklamsız bir ana ekran deneyimi."
-                    android:textColor="#BCD0E2"
-                    android:textSize="@dimen/hero_subtitle_size"/>
-            </LinearLayout>
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#2B3A4B"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/welcome_top_margin">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end|center_vertical"
-                android:text="◉"
-                android:textSize="100sp"
-                android:textColor="#274C72"/>
-        </FrameLayout>
+                android:text="İyi seyirler."
+                android:textColor="#F5F9FD"
+                android:textSize="@dimen/welcome_text_size"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="İçeriklerin, uygulamaların, tercihlerin."
+                android:textColor="#92A8BF"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/category_title_top_margin"
+            android:text="KATEGORİLER"
+            android:textColor="#809DBA"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.20"/>
+
+        <HorizontalScrollView
+            android:id="@+id/categoryScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:scrollbars="none">
+            <LinearLayout
+                android:id="@+id/categoryRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="4dp"
+                android:paddingEnd="6dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"/>
+        </HorizontalScrollView>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/section_top_margin"
-            android:gravity="center_vertical">
-            <TextView
-                android:layout_width="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Uygulamalarım"
-                android:textSize="@dimen/section_title_size"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"/>
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/sectionTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tümü"
+                        android:textColor="#F1F6FA"
+                        android:textSize="22sp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/appsCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:text="0 uygulama"
+                        android:textColor="#A0B8CA"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/sectionSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:textColor="#7893AA"
+                    android:textSize="12sp"/>
+            </LinearLayout>
             <TextView
-                android:id="@+id/appsCount"
+                android:id="@+id/editButton"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:textColor="#A5BDCF"
-                android:textSize="13sp"/>
+                android:layout_height="39dp"
+                android:gravity="center"
+                android:text="✎ Düzenle"
+                android:textColor="#F5F9FD"
+                android:textSize="14sp"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:background="@drawable/chip_selector"/>
         </LinearLayout>
+
         <HorizontalScrollView
             android:id="@+id/appsScroll"
-            android:clipChildren="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/apps_row_top_margin"
-            android:fillViewport="false"
-            android:clipToPadding="false"
-            android:scrollbars="none">
+            android:layout_marginTop="11dp"
+            android:scrollbars="none"
+            android:clipChildren="false"
+            android:clipToPadding="false">
             <LinearLayout
                 android:id="@+id/appsRow"
-                android:clipChildren="false"
-                android:clipToPadding="false"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingTop="@dimen/apps_row_vertical_padding"
-                android:paddingBottom="@dimen/apps_row_vertical_padding"/>
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:paddingStart="7dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"/>
         </HorizontalScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="11dp"
+            android:background="#223348"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/footer_top_margin"
-            android:gravity="center_vertical">
+            android:layout_marginTop="11dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="← → Uygulama seç   •   OK Aç   •   Geri Çık"
-                android:textColor="#90A4BA"
-                android:textSize="13sp"/>
+                android:text="← → Seç   •   OK Aç   •   OK basılı tut: Düzenle"
+                android:textColor="#8BA5BC"
+                android:textSize="12sp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="BEKO HOME  v0.1.1"
+                android:text="v0.2.0"
+                android:textSize="12sp"
                 android:letterSpacing="0.10"
-                android:textColor="#7893AD"
-                android:textSize="12sp"/>
+                android:textColor="#65829D"/>
         </LinearLayout>
+
     </LinearLayout>
 </ScrollView>
