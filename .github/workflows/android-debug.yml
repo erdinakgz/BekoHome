@@ -17,7 +17,11 @@ jobs:
           distribution: temurin
           java-version: '17'
           cache: gradle
-      - uses: android-actions/setup-android@v3
+      # v3 requested the removed Android SDK 'tools' package.
+      # v4 installs supported platform-tools without requesting legacy tools.
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools'
       - name: Install Android SDK 34
         run: sdkmanager 'platforms;android-34' 'build-tools;34.0.0'
       - name: Verify Gradle 8.9 Wrapper
