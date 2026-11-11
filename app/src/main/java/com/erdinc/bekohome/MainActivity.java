@@ -160,32 +160,36 @@ public final class MainActivity extends Activity {
         LinearLayout tile = new LinearLayout(this);
         tile.setOrientation(LinearLayout.VERTICAL);
         tile.setGravity(Gravity.CENTER);
-        tile.setPadding(dp(12), dp(15), dp(12), dp(13));
+        tile.setPadding(dp(10), dp(10), dp(10), dp(9));
         tile.setBackgroundResource(R.drawable.card_selector);
         tile.setFocusable(true);
         tile.setClickable(true);
         tile.setContentDescription(app.label + " uygulamasını aç");
 
         LinearLayout.LayoutParams tileParams =
-                new LinearLayout.LayoutParams(dp(168), dp(142));
-        tileParams.setMargins(dp(2), 0, dp(17), 0);
+                new LinearLayout.LayoutParams(
+                        getResources().getDimensionPixelSize(R.dimen.app_tile_width),
+                        getResources().getDimensionPixelSize(R.dimen.app_tile_height));
+        tileParams.setMargins(dp(4), 0,
+                getResources().getDimensionPixelSize(R.dimen.app_tile_gap), 0);
         tile.setLayoutParams(tileParams);
 
         ImageView icon = new ImageView(this);
         icon.setScaleType(ImageView.ScaleType.FIT_CENTER);
         icon.setImageDrawable(app.icon);
-        tile.addView(icon, new LinearLayout.LayoutParams(dp(58), dp(58)));
+        int iconSize = getResources().getDimensionPixelSize(R.dimen.app_icon_size);
+        tile.addView(icon, new LinearLayout.LayoutParams(iconSize, iconSize));
 
         TextView name = new TextView(this);
         name.setText(app.label);
         name.setTextColor(0xFFF2F6FA);
         name.setGravity(Gravity.CENTER);
-        name.setTextSize(15f);
-        name.setSingleLine(true);
+        name.setTextSize(14f);
+        name.setMaxLines(2);
         name.setEllipsize(TextUtils.TruncateAt.END);
         LinearLayout.LayoutParams nameParams =
                 new LinearLayout.LayoutParams(-1, -2);
-        nameParams.topMargin = dp(14);
+        nameParams.topMargin = getResources().getDimensionPixelSize(R.dimen.app_label_margin_top);
         tile.addView(name, nameParams);
 
         tile.setOnClickListener(v -> {
@@ -196,7 +200,7 @@ public final class MainActivity extends Activity {
             }
         });
         tile.setOnFocusChangeListener((v, focused) -> {
-            float scale = focused ? 1.055f : 1.0f;
+            float scale = focused ? 1.04f : 1.0f;
             v.animate().scaleX(scale).scaleY(scale).setDuration(120).start();
         });
         return tile;

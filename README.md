@@ -4,7 +4,7 @@
 
 [🇹🇷 Türkçe kurulum ve kullanım rehberi](README-TR.md) · [Changelog](CHANGELOG.md)
 
-> **Status:** v0.1.0 alpha — source code available; physical-TV testing and APK build verification are still pending.
+> **Status:** v0.1.1 alpha — v0.1.0 was launched on a physical Beko TV and remote D-pad/OK/Back/Home checks passed. **v0.1.1 still needs on-device verification.**
 >
 > **Unofficial project.** Not affiliated with or endorsed by Beko, Google or any streaming-service provider.
 
@@ -15,6 +15,7 @@
 - Lists launchable installed apps and opens them
 - Live Turkish-language clock and date
 - Minimal dark layout, without ads, analytics, or network permissions
+- v0.1.1 compact height-responsive UI layout and app labels up to two lines
 - Safe to test: **does not register as the system HOME launcher** and does not disable the stock Google TV launcher
 
 ## Compatibility / development
@@ -53,6 +54,8 @@ Use the actual ADB connection address/port shown on the TV; the pairing port is 
 ```
 
 This leaves the original Google TV home screen intact.
+
+**Note:** If the new debug APK is signed with a different key (e.g. local build versus CI), `adb install -r` can fail with `INSTALL_FAILED_UPDATE_INCOMPATIBLE`. Uninstall only `com.erdinc.bekohome` and reinstall; this clears the app’s data.
 
 ## CI / APK
 

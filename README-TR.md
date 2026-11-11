@@ -1,8 +1,8 @@
-# BekoHome v0.1.0 — Android TV / Google TV
+# BekoHome v0.1.1 — Android TV / Google TV
 
 Beko Google UHD TV için hafif, kumanda ile kullanılabilen **test amaçlı ana ekran uygulaması**.
 
-**Durum:** Alpha / kaynak kodu. İlk fiziksel TV testi ve başarılı APK derlemesi henüz doğrulanmadı.
+**Durum:** Alpha. v0.1.0 fiziksel Beko TV üzerinde açıldı; sağ/sol, OK ve Geri/Home testleri başarılı. **v0.1.1 henüz fiziksel TV üzerinde test edilmedi.**
 Bu proje Beko veya Google'ın resmî ürünü değildir.
 
 ## Doğrulanmış hedef cihaz
@@ -17,6 +17,7 @@ Bu proje Beko veya Google'ın resmî ürünü değildir.
 - Yüklü TV uygulamalarını listeleme, simgelerini gösterme ve çalıştırma
 - Canlı Türkçe saat/tarih
 - Koyu, minimal arayüz
+- v0.1.1: Küçük TV ekranlarında kompakt yerleşim, iki satıra kadar uygulama adları
 - Reklam kütüphanesi, takip kodu ve internet izni içermez
 - Orijinal Google TV HOME uygulamasını kaldırmaz veya devre dışı bırakmaz
 
@@ -64,6 +65,13 @@ cd C:\platform-tools
 `adb devices` sonucunda TV `device` durumunda olmalı. Eşleştirme portu ile
 bağlantı portu farklıdır. ADB kodlarını herkese açık paylaşmayın.
 
+**Güncelleme:** Aynı Windows bilgisayarında üretilen debug APK, önceki sürümün
+üzerine `install -r` ile yüklenebilir. APK farklı bir imzayla (örneğin GitHub
+Actions üzerinde) oluşturulduysa `INSTALL_FAILED_UPDATE_INCOMPATIBLE` hatası
+oluşabilir. Bu durumda yalnızca kendi BekoHome uygulamanızı
+`adb uninstall com.erdinc.bekohome` ile kaldırıp yeni APK’yı kurun; bu işlem
+uygulamanın kendi verilerini siler, Google TV sistemini etkilemez.
+
 ## TV'de kullanım / geri alma
 - Sağ/sol ile uygulama seç, OK ile aç, Geri ile çık.
 - HOME tuşu mevcut Google TV ana ekranını açmaya devam eder.
@@ -77,8 +85,13 @@ bağlantı portu farklıdır. ADB kodlarını herkese açık paylaşmayın.
 **Actions → Android debug build** iş akışının başarılı çalışması durumunda
 **Artifacts** bölümünden `BekoHome-debug-apk` dosyasını indirebilirsiniz.
 
+## v0.1.1 test kontrol listesi
+- Uygulama kartları, uygulama adları ve en alttaki kontrol yazısı tam görünüyor mu?
+- Kumandada sağ/sol ve OK çalışıyor mu?
+- Geri/Home ile normal Google TV ekranına dönülebiliyor mu?
+
 ## Bilinmesi gerekenler
-- APK henüz fiziksel cihazda doğrulanmış değildir.
+- v0.1.1 APK henüz fiziksel cihazda doğrulanmış değildir.
 - Bazı üretici uygulamaları Android paket görünürlüğü kısıtlamaları nedeniyle listede görünmeyebilir.
 - HDMI kaynağına doğrudan geçiş bu ilk sürümde yoktur.
 - Lisans henüz seçilmedi; resmî bir açık kaynak lisansı eklenmeden yeniden kullanım izni verilmiş sayılmaz.
